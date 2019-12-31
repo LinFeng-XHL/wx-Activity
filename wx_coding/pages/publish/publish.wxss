@@ -1,0 +1,166 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+
+.button {
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 16px;
+  border: 0 none;
+  background: #118fff;
+  color: #fff;
+  margin: 30rpx auto;
+  border-radius: 50px;
+}
+
+
+
+/*最新样式*/
+.mt20{
+  margin-top: 20rpx;
+}
+
+
+
+.mod-a{
+  padding: 0 20rpx;
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+}
+
+.mod{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  padding: 0 20rpx;
+}
+
+.mod-big{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 250rpx;
+  padding: 0 20rpx;
+  position:relative;
+}
+
+.t-name .input, .t-address .value{
+  text-align: right;
+  width: 200rpx;
+  overflow: hidden;
+  color: #b2b2b2;
+  height: 44rpx;
+  border:#118fff 1px so
+}
+
+
+
+.add_pic {
+  padding: 0 40rpx;
+  background: #fff;
+}
+
+.add_pic view {
+  display: inline-block;
+  margin-top: 20rpx;
+  width: 430rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  background-size: 160rpx auto;
+  padding-left: 80rpx;
+  color: #b2b2b2;
+}
+.add_pic .code {
+  display: inline-block;
+  margin-top: 20rpx;
+  width: 430rpx;
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  background-size: 160rpx auto;
+  padding-left: 130rpx;
+  color: #b2b2b2;
+}
+
+.image_box {
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 10px 0 10rpx;
+}
+
+.picPre {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.picPre image {
+  width: 100%;
+  height: 180rpx;
+}
+
+.picPre view {
+  position: absolute;
+  right: 0px;
+  top: -20rpx;
+  width: 15px;
+  height: 15px;
+  
+  background-size: cover;
+}
+
+.showImageAll{
+  width:100%;
+  height:auto;
+  position:relative;
+}
+.showImage{
+  width:180rpx;
+  height:180rpx;
+ 
+}
+.imageGroup{
+  width: 245rpx;
+  height: 245rpx;
+  float: left
+}
+.btn{
+  position:relative;
+  width: 100%;
+}
+
+
+.item{
+  width:100%;
+  height: 80rpx;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 25rpx;
+  display: flex;
+  color:#666;
+  font-size: 30rpx
+}
+.item-left{
+  width: 30%;
+  height: 80rpx;
+  text-align: right;
+  line-height: 80rpx;
+}
+.item-right{
+  width: 68%;
+  height: 80rpx;
+  margin-left: 2%;
+  text-align: left;
+  line-height: 80rpx;
+}

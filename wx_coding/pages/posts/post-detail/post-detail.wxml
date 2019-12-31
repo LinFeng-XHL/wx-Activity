@@ -1,0 +1,26 @@
+
+<!--先静后动，先样式再数据-->
+<view class="container">
+  <image class="head-image" src="{{isPlayingMusic?postData.music.coverImg:postData.headImgSrc}}"></image>
+
+ <view class="author-date">
+    <image class="post-author" src="{{postData.dateImage}}"></image>
+    <text class="post-content">{{postData.date}}</text>
+  </view>
+  <view class="author-date">
+    <image class="post-author" src="{{postData.addressImage}}"></image>
+    <text class="post-content">{{postData.address}}</text>
+  </view>
+
+  <text class="title">{{postData.title}}</text>
+  <text class="detail">{{postData.detail}}</text>
+
+
+
+ 
+  <button class="btnStyle"   open-type="getUserInfo" bindgetuserinfo="getUserInfo">我要报名</button>
+
+
+
+
+</view>

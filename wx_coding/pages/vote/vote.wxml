@@ -1,0 +1,51 @@
+
+
+
+<view wx:if="{{list.length<=0}}" class="emptyText">暂无活动投票相关数据</view>
+<view wx:else="{{list.length>0}}">
+<!--一个投票小模块-->
+<block wx:for="{{list}}" wx:for-item="item" wx:for-index="idx" wx:if="{{list.length>0}}">
+
+
+
+<view class="vote_block">
+    <!--活动图片-->
+    <view class="vote_img" wx:if="{{item.urlType=='1'}}">
+        <view class="vote_count" wx:if="{{item.voteCount==0}}" >暂无票数</view>
+        <view class="vote_count" wx:else="{{item.voteCount>0}}" >Top{{idx+1}}：{{item.voteCount}}</view>
+        <image class="activity_img" src="{{item.imageUrl}}"></image>
+    </view>
+    <view class="vote_img" wx:else="{{item.urlType=='2'}}">
+        <view class="vote_count" wx:if="{{item.voteCount==0}}" >暂无票数</view>
+        <view class="vote_count" wx:else="{{item.voteCount>0}}" >Top{{idx+1}}：{{item.voteCount}}</view>
+        <image class="activity_img" src="../../images/post/movie.png"></image>
+    </view>
+    <view class="vote_info">
+        <view class="avatar_img">
+          <image src="{{item.avatarUrl}}" class="avatar"></image>
+        </view>
+        <view class="avatar_text">
+          <view class="nickname">{{item.nickName}}</view>
+          <view class="username">
+            <image src="../../images/icon/username.png" class="user-icon" ></image>
+            <text class="user-username">{{item.username}}</text>
+          </view>
+        </view>
+    </view>
+
+
+    <!-- <view class="vote_btn" >
+      <button class="vote_button" open-type='getUserInfo' bindgetuserinfo="getUserInfo" data-voteId="{{item.id}}">投票</button>
+    </view> -->
+
+    <view class="vote_btn" wx:if="{{flag==true}}">
+      <button class="vote_button" open-type='getUserInfo' bindgetuserinfo="getUserInfo" data-voteId="{{item.id}}">投票</button>
+    </view>
+     <view class="vote_btn" wx:else="{{flag==false}}">
+      <button class="voted_button">投票</button>
+    </view>
+   
+</view>
+</block>
+</view>
+

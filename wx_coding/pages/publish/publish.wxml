@@ -1,0 +1,105 @@
+<form bindsubmit="formSubmit">
+
+    
+
+    <!--默认一加载页面就会获取当前微信用户的下面几项信息，只是为了传输给后台，默认隐藏-->
+    <view class="mod-a" style="display:none">
+      <!-- 微信昵称 -->
+      <view class="mod t-name">
+        <text class="key" style="font-size:30rpx;">微信昵称：</text>
+        <input value="{{userInfo.nickName}}" name="nickName"></input>
+      </view>
+    </view>
+    <view class="mod-a" style="display:none">
+      <!-- 微信头像 -->
+      <view class="mod t-name">
+        <text class="key" style="font-size:30rpx;">微信头像：</text>
+        <input value="{{userInfo.avatarUrl}}" name="avatarUrl"></input>
+      </view>
+    </view>
+    <view class="mod-a" style="display:none">
+      <!-- 微信性别 -->
+      <view class="mod t-name">
+        <text class="key" style="font-size:30rpx;">性别：</text>
+        <input value="{{userInfo.gender}}" name="gender"></input>
+      </view>
+    </view>
+
+
+     
+
+
+       <view class="item">
+          <view class="item-left">活动时间：</view>
+          <view class="item-right">
+            <input name="username" disabled="true" value="2019/10/31-2019/11/09" style="width:480rpx; height:80rpx;"/>
+          </view>
+       </view>
+
+    
+      <view class="item">
+        <view class="item-left">姓名：</view>
+        <view class="item-right">
+          <input name="username" style="width:480rpx; height:80rpx;"/>
+        </view>
+      </view>
+    
+   
+      <view class="item">
+        <view class="item-left">手机号：</view>
+        <view class="item-right">
+          <input name="phone" type="number" style="width:480rpx; height:80rpx;"/>
+        </view>
+      </view>
+
+     
+  
+
+    <!-- 报名内容备注 -->
+    <view class="mod-a mt20">
+      <view class="mod-big my-nick">
+        <textarea name="backup" maxlength="-1" class="weui-textarea" placeholder="参与活动备注" value="" style="height: 7em" bindinput="bindTextAreaChange"  />
+      </view>
+    </view>
+
+
+
+    <!-- 报名上传的图片(上传单张图片的方法) -->
+    <!-- <view class="add_pic" bindtap="uploadPic" wx-if="{{!isSrc}}"> -->
+    <!--上传图片或者视频的方法调用-->
+    <view class="add_pic" bindtap="uploadFiles" wx-if="{{!isSrc}}">
+      <view><image src="../../images/post/addimgsbtn.png" style="width:167rpx;height:167rpx"></image></view>
+    </view>
+    <!--作为隐藏域传输图片路径的值-->
+    <view style="display:none"><input type="text" name="imageUrl" value="{{image.imageUrl}}"/></view>
+    <view wx:if="{{isSrc}}" class="image_box">
+
+      <view class="picPre" bindtap="clearPic" wx:if="{{!isMovies}}">
+        <image name="imageUrl" value="{{image.imageUrl}}" src="{{image.imageUrl}}" mode="aspectFit"></image>
+      </view>
+      <view class="picPre" bindtap="clearPic" wx:else="{{isMovies}}">
+        <image name="imageUrl" value="{{image.imageUrl}}" src="../../images/post/movie.png" mode="aspectFit"></image>
+      </view>
+
+    </view>
+    <view class="mod-a mt20"></view>
+    
+
+
+    <!-- 报名上传的图片(上传多张图片的方法) 未成功 -->
+    <!-- <input type="text" name="imageUrl" value="{{uploaderList}}"/>
+    <view  wx:for="{{uploaderList}}" wx:key="{{index}}" class="showImageAll" >
+      <view class="imageGroup">
+          <icon bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red"/>
+          <image mode="aspectFit" class="showImage"  bindtap='showImg' src='{{item}}'></image>
+      </view>
+    </view>
+    <button bindtap='upload' class="btn" wx:if="{{showUpload}}">上传附件</button> -->
+
+    <!-- 报名提交按钮 -->
+    <view class="submit-btn">
+      <!-- <button class='button' formType="submit" wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">报名</button> -->
+      <button class='button' formType="submit" >报名</button>
+    </view>
+
+</form>

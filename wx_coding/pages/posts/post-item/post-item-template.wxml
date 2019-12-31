@@ -1,0 +1,20 @@
+<template name="postItem">
+    <view class="post-container">
+      
+           <text class="post-title">{{title}}</text>
+            <image class="post-image" src="{{imgSrc}}"></image>
+            <text class="post-content">活动简介：</text>
+            <text class="post-content">{{content}}</text>
+
+            <view class="post-author-date">
+              <image class="post-author" src="{{dateImage}}"></image>
+              <text class="post-content">{{date}}</text>
+            </view>
+            <view class="post-author-date">
+              <image class="post-author" src="{{addressImage}}"></image>
+              <text class="post-content">{{address}}</text>
+            </view>
+
+
+        </view>
+</template>

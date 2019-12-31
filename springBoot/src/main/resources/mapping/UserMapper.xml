@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cnrmall.springboot.dao.UserMapper">
+
+
+    <select id="findListByValid" resultType="com.cnrmall.springboot.entity.User">
+
+        select id as id ,username as username ,phone as phone,avatar_url as avatarUrl,nick_name as nickName,image_url as imageUrl,
+        gender as gender,insert_date as insertDate,backup as backup,valid as valid,url_type as urlType
+        from user where valid='1' order by id asc
+
+    </select>
+
+    <select id="findList" resultType="com.cnrmall.springboot.entity.User">
+
+        select id as id ,username as username ,phone as phone,avatar_url as avatarUrl,nick_name as nickName,image_url as imageUrl,
+        gender as gender,insert_date as insertDate,backup as backup,valid as valid,url_type as urlType
+        from user order by id asc
+
+    </select>
+
+
+
+    <resultMap id="userByVoteMap" type="com.cnrmall.springboot.entity.User">
+        <id column="id" property="id"></id>
+        <result property="username" column="username"/>
+        <result property="avatarUrl" column="avatarUrl"/>
+        <result property="voteCount" column="voteCount"/>
+        <result property="nickName" column="nickName"/>
+        <result property="imageUrl" column="imageUrl"/>
+        <result property="urlType" column="urlType"/>
+        <association property="voteCount" javaType="com.cnrmall.springboot.entity.VoteDO" >
+            <id property="voteid" column="voteid"></id>
+        </association>
+    </resultMap>
+
+    <select id="findListByOrder" resultMap="userByVoteMap">
+
+        select
+        u.id as id ,u.username as username,u.nick_name as nickname,u.avatar_url as avatarUrl,u.image_url as imageUrl,url_type as urlType,count(voteid) voteCount
+        from user u left join vote v on  u.id=v.voteid where u.valid='1'
+        group by v.voteid,u.id,u.username,u.nick_name,u.avatar_url,u.image_url,u.url_type
+        order by voteCount desc
+
+    </select>
+
+
+
+    
+    <select id="findListById" parameterType="java.lang.Integer" resultType="com.cnrmall.springboot.entity.User">
+
+        SELECT id as id ,username as username ,phone as phone,avatar_url as avatarUrl,nick_name as nickName,image_url as imageUrl,
+        gender as gender,insert_date as insertDate,backup as backup,url_type as urlType
+         FROM user WHERE id=#{id,jdbcType=INTEGER}
+
+    </select>
+
+
+    <select id="findListByPhone" parameterType="java.lang.String" resultType="com.cnrmall.springboot.entity.User">
+
+        SELECT id as id ,username as username ,phone as phone
+         FROM user WHERE phone=#{phone,jdbcType=VARCHAR}
+
+    </select>
+
+
+    
+    <insert id="add" parameterType="java.lang.String">
+
+        INSERT INTO user(username, phone,image_url,file_url,backup,insert_date,avatar_url,nick_name,gender,valid,url_type)
+        VALUES(#{username}, #{phone},#{imageUrl},#{fileUrl},#{backup},now(),#{avatarUrl},#{nickName},#{gender},'0',#{urlType})
+
+    </insert>
+
+
+    <update id="updateByUserId" parameterType="java.lang.Integer">
+
+        update user set valid = '1'
+        where id=#{id,jdbcType=INTEGER}
+
+    </update>
+
+    
+
+</mapper>

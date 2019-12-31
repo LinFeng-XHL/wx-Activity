@@ -1,0 +1,41 @@
+{
+  "pages": [
+    
+    "pages/posts/post",
+    "pages/posts/post-detail/post-detail",
+    "pages/publish/publish",
+    "pages/consume/consume",
+    "pages/consume/consume-detail/consume-detail",
+    "pages/vote/vote",
+    "pages/test/test"
+
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#405f80"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/posts/post",
+        "text": "参加活动",
+        "iconPath": "images/tab/yuedu.png",
+        "selectedIconPath": "images/tab/yuedu_hl.png"
+      },
+      {
+        "pagePath": "pages/consume/consume",
+        "text": "查看报名",
+        "iconPath": "images/tab/ciwei.png",
+        "selectedIconPath": "images/tab/ciwei_hl.png"
+      },
+      {
+        "pagePath": "pages/vote/vote",
+        "text": "活动投票",
+        "iconPath": "images/tab/dianying.png",
+        "selectedIconPath": "images/tab/dianying_hl.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,26 @@
+
+
+
+
+
+<view wx:if="{{list.length<=0}}" class="emptyText">暂无报名数据</view>
+<view wx:else="{{list.length>0}}">
+<block wx:for="{{list}}" wx:for-item="item" wx:for-index="idx" >
+<view class="user-item" catchtap="onPostTap" data-postId="{{item.id}}" >
+    <view class="user-avatar" ><image class="user-avatar-url" src="{{item.avatarUrl}}" ></image></view>
+    <view class="user-text">
+      <view class="user-text-top">
+        <text class="nick-name">{{item.nickName}}</text> 
+      </view>
+      <view class="user-text-bottom">
+        <image src="../../images/icon/username.png" class="user-icon" ></image>
+        <text class="user-username">{{item.username}}</text>
+        <image src="../../images/icon/phone.png" class="user-icon"></image>
+        <text class="user-phone">{{item.phone}}</text>
+      </view> 
+    </view>
+</view>
+</block>
+</view>
+
+

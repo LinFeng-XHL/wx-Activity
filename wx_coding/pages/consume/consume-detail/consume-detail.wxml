@@ -1,0 +1,47 @@
+<view class="item">
+    <view class="item-left">真实姓名：</view>
+    <view class="item-right">{{user.username}}</view>
+</view>
+
+<view class="item">
+    <view class="item-left">性别：</view>
+    <view class="item-right" wx:if="{{user.gender==0}}">男</view>
+    <view class="item-right" wx:if="{{user.gender==1}}">女</view>
+</view>
+
+<view class="item">
+    <view class="item-left">微信昵称：</view>
+    <view class="item-right">{{user.nickName}}</view>
+</view>
+
+<view class="item">
+    <view class="item-left">微信头像：</view>
+    <view class="item-right">
+      <image src="{{user.avatarUrl}}" style="width:80rpx;height:80rpx"></image>
+    </view>
+</view>
+
+<view class="item">
+    <view class="item-left">联系方式：</view>
+    <view class="item-right">{{user.phone}}</view>
+</view>
+
+<view class="item">
+    <view class="item-left">报名时间：</view>
+    <view class="item-right">{{user.insertDate}}</view>
+</view>
+
+<view class="item-m">
+    <view class="item-left-m">报名备注：</view>
+    <text class="item-right-m">{{user.backup}}</text>
+</view>
+
+<view class="item-b">
+    <view class="item-left-b">附件展示：</view>
+    <view class="item-right-b" wx:if="{{user.urlType=='1'}}">
+      <image src="{{user.imageUrl}}" style="width:68%;height:280rpx" bindtap='previewImg' data-src="{{user.imageUrl}}"></image>
+    </view>
+    <view class="item-right-b" wx:else="{{user.urlType=='2'}}">
+      <video src="{{user.imageUrl}}" style="width:45%;height:240rpx" bindtap='previewImg' data-src="{{user.imageUrl}}"></video>
+    </view>
+</view>

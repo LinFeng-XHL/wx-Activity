@@ -1,0 +1,127 @@
+page{
+  background-color:#eee
+}
+.vote_block{
+  width:45.5%;
+  height: 380rpx;
+  margin-left: 3%;
+  float: left;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 25rpx;
+  margin-top: 15rpx;
+}
+
+.vote_img{
+  width: 100%;
+  height: 230rpx;
+  
+}
+
+.vote_count{
+  width:120rpx;
+  height:60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  background-color:#000;
+  position: absolute;
+  color:#eedf0f;
+  opacity:0.6
+}
+
+.activity_img{
+  width: 100%;
+  height: 230rpx;
+}
+
+
+.vote_info{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+}
+
+
+
+.avatar_img{
+  width: 90rpx;
+  height: 90rpx;
+  margin-left: 8rpx;
+  margin-top: 8rpx
+}
+
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 15rpx;
+}
+
+.avatar_text{
+  width: 230rpx;
+  margin-left: 5rpx;
+  height: 90rpx;
+}
+
+.nickname{
+  width: 230rpx;
+  height: 50rpx;
+  text-align: left;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.user-icon{
+  width:25rpx;
+  height:25rpx;
+  line-height: 50px;
+  
+}
+.user-username{
+  margin-left: 8rpx;
+  margin-right: 50rpx;
+  color:#000;
+  line-height: -20rpx;
+  font-size: 22rpx;
+
+}
+
+.username{
+  width: 230rpx;
+  height: 40rpx;
+}
+
+
+
+.vote_btn{
+  width: 100%;
+  height: 60rpx;
+}
+
+.vote_button{
+  width: 98%;
+  height: 55rpx;
+  background-color:#118fff;
+  margin-top: 5rpx;
+  color: #fff;
+  line-height: 55rpx
+}
+
+.voted_button{
+  width: 98%;
+  height: 55rpx;
+  background-color:#eee;
+  margin-top: 5rpx;
+  color: #999;
+  line-height: 55rpx
+}
+
+.emptyText{
+  width:100%;
+  height:100%;
+  text-align:center;
+  margin-top:50%;
+  font-size: 32rpx;
+  color: #999
+}
